@@ -135,6 +135,10 @@ public PS4Controller getPS4Controller1() {
     // The selected command will be run in autonomous
     return m_chooser.getSelected();
   }
+
+  public void simulationInit() {
+    m_driveTrain.simulationInit();
+  }
   
 
 }
