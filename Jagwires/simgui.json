@@ -1,0 +1,56 @@
+{
+  "HALProvider": {
+    "Other Devices": {
+      "SPARK MAX [0]": {
+        "header": {
+          "open": true
+        }
+      },
+      "SPARK MAX [2]": {
+        "header": {
+          "open": true
+        }
+      }
+    }
+  },
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/SmartDashboard/AlignWithPole": "Command",
+      "/SmartDashboard/Auto Mode": "String Chooser",
+      "/SmartDashboard/Autonomous Command": "Command",
+      "/SmartDashboard/Balance": "Command",
+      "/SmartDashboard/DisplayCone": "Command",
+      "/SmartDashboard/DisplayCube": "Command",
+      "/SmartDashboard/Extend": "Command",
+      "/SmartDashboard/Field": "Field2d",
+      "/SmartDashboard/Pickup": "Command",
+      "/SmartDashboard/PlaceCone": "Command",
+      "/SmartDashboard/PlaceCube": "Command",
+      "/SmartDashboard/Retract": "Command"
+    },
+    "windows": {
+      "/SmartDashboard/Field": {
+        "window": {
+          "visible": true
+        }
+      }
+    }
+  },
+  "NetworkTables": {
+    "transitory": {
+      "SmartDashboard": {
+        "AlignWithPole": {
+          "open": true
+        },
+        "Field": {
+          "open": true
+        },
+        "open": true
+      }
+    }
+  },
+  "NetworkTables View": {
+    "visible": false
+  }
+}
