@@ -81,7 +81,11 @@ private final PS4Controller pS4Controller1 = new PS4Controller(0);
     configureButtonBindings();
 
     // Configure default commands
-    m_driveTrain.setDefaultCommand(new Teleop(() -> -pS4Controller1.getLeftY(), () -> -pS4Controller1.getRightY(), m_driveTrain));
+    m_driveTrain.setDefaultCommand(
+      new Teleop(
+        () -> -pS4Controller1.getLeftY(),
+        () -> pS4Controller1.getRightX(),
+        m_driveTrain));
 
 
 

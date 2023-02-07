@@ -84,7 +84,7 @@ right = new MotorControllerGroup(rightFront, rightRear  );
  addChild("Right",right);
  
 
-differentialDrive1 = new DifferentialDrive(left, leftFront);
+differentialDrive1 = new DifferentialDrive(left, right);
  addChild("Differential Drive 1",differentialDrive1);
  differentialDrive1.setSafetyEnabled(true);
 differentialDrive1.setExpiration(0.1);
@@ -163,6 +163,9 @@ m_odometry = new DifferentialDriveOdometry(
         left.set(leftPower);
         right.set(rightPower);
 
+    }
+    public void POVdrive(double power, double trunAngle){
+        differentialDrive1.arcadeDrive(power, trunAngle);
     }
 
     public void simulationInit() {

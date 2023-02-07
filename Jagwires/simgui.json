@@ -31,6 +31,7 @@
     },
     "windows": {
       "/SmartDashboard/Field": {
+        "image": "C:\\Users\\Jagwire\\Documents\\DeepSpace\\2019-field.jpg",
         "window": {
           "visible": true
         }
