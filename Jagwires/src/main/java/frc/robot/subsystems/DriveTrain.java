@@ -97,6 +97,7 @@ leftRear.getEncoder().setPositionConversionFactor(0.0001);
 rightRear.getEncoder().setPositionConversionFactor(0.0001);
 
 SmartDashboard.putData("Field", m_field);
+SmartDashboard.putData("diffDrive", differentialDrive1);
 
 m_odometry = new DifferentialDriveOdometry(
     m_navx.getRotation2d(),
@@ -164,8 +165,8 @@ m_odometry = new DifferentialDriveOdometry(
         right.set(rightPower);
 
     }
-    public void POVdrive(double power, double trunAngle){
-        differentialDrive1.arcadeDrive(power, trunAngle);
+    public void POVdrive(double speed, double rotation){
+        differentialDrive1.arcadeDrive(speed, rotation);
     }
 
     public void simulationInit() {

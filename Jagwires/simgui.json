@@ -27,7 +27,8 @@
       "/SmartDashboard/Pickup": "Command",
       "/SmartDashboard/PlaceCone": "Command",
       "/SmartDashboard/PlaceCube": "Command",
-      "/SmartDashboard/Retract": "Command"
+      "/SmartDashboard/Retract": "Command",
+      "/SmartDashboard/diffDrive": "DifferentialDrive"
     },
     "windows": {
       "/SmartDashboard/Field": {
@@ -41,17 +42,11 @@
   "NetworkTables": {
     "transitory": {
       "SmartDashboard": {
-        "AlignWithPole": {
-          "open": true
-        },
-        "Field": {
+        "diffDrive": {
           "open": true
         },
         "open": true
       }
     }
-  },
-  "NetworkTables View": {
-    "visible": false
   }
 }
