@@ -3,6 +3,12 @@
     <grip:Camera>
       <property name="deviceNumber" value="1"/>
     </grip:Camera>
+    <grip:ImageFile>
+      <property name="path" value="C:\Users\Jagwire\Documents\GitHub\FRC-2023\TestImages\WIN_20230214_17_19_44_Pro.jpg"/>
+    </grip:ImageFile>
+    <grip:ImageFile>
+      <property name="path" value="C:\Users\Jagwire\Documents\GitHub\FRC-2023\TestImages\WIN_20230214_17_19_19_Pro.jpg"/>
+    </grip:ImageFile>
   </sources>
   <steps>
     <grip:Step name="Blur">
@@ -31,7 +37,7 @@
       </grip:Input>
       <grip:Input step="1" socket="3">
         <value>
-          <double>220.14387395742128</double>
+          <double>246.13308842233616</double>
           <double>255.0</double>
         </value>
       </grip:Input>
@@ -39,49 +45,66 @@
     </grip:Step>
     <grip:Step name="Find Lines">
       <grip:Input step="2" socket="0"/>
-      <grip:Output step="2" socket="0" previewed="true"/>
+      <grip:Output step="2" socket="0" previewed="false"/>
     </grip:Step>
-    <grip:Step name="NTPublish LinesReport">
+    <grip:Step name="Filter Lines">
       <grip:Input step="3" socket="0"/>
       <grip:Input step="3" socket="1">
-        <value>myLinesReport</value>
+        <value>20</value>
       </grip:Input>
       <grip:Input step="3" socket="2">
+        <value>
+          <int>0</int>
+          <double>116.31398536239467</double>
+        </value>
+      </grip:Input>
+      <grip:Output step="3" socket="0" previewed="true"/>
+    </grip:Step>
+    <grip:Step name="NTPublish LinesReport">
+      <grip:Input step="4" socket="0"/>
+      <grip:Input step="4" socket="1">
+        <value>myLinesReport</value>
+      </grip:Input>
+      <grip:Input step="4" socket="2">
         <value>true</value>
       </grip:Input>
-      <grip:Input step="3" socket="3">
+      <grip:Input step="4" socket="3">
         <value>true</value>
       </grip:Input>
-      <grip:Input step="3" socket="4">
+      <grip:Input step="4" socket="4">
         <value>true</value>
       </grip:Input>
-      <grip:Input step="3" socket="5">
+      <grip:Input step="4" socket="5">
         <value>true</value>
       </grip:Input>
-      <grip:Input step="3" socket="6">
+      <grip:Input step="4" socket="6">
         <value>true</value>
       </grip:Input>
-      <grip:Input step="3" socket="7">
+      <grip:Input step="4" socket="7">
         <value>true</value>
       </grip:Input>
     </grip:Step>
   </steps>
   <connections>
     <grip:Connection>
-      <grip:Output step="2" socket="0" previewed="true"/>
+      <grip:Output step="3" socket="0" previewed="true"/>
+      <grip:Input step="4" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="2" socket="0" previewed="false"/>
       <grip:Input step="3" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output step="0" socket="0" previewed="false"/>
-      <grip:Input step="1" socket="0"/>
-    </grip:Connection>
-    <grip:Connection>
-      <grip:Output source="0" socket="0" previewed="true"/>
+      <grip:Output source="2" socket="0" previewed="true"/>
       <grip:Input step="0" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output step="1" socket="0" previewed="false"/>
       <grip:Input step="2" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="0" socket="0" previewed="false"/>
+      <grip:Input step="1" socket="0"/>
     </grip:Connection>
   </connections>
   <settings>
