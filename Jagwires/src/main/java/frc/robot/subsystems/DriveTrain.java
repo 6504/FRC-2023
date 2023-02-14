@@ -64,20 +64,20 @@ private Field2d m_field = new Field2d();
     *
     */
     public DriveTrain() {
-leftFront = new CANSparkMax(0, MotorType.kBrushless);
+leftFront = new CANSparkMax(13, MotorType.kBrushless);
  leftFront.setInverted(false);
 
-leftRear = new CANSparkMax(1, MotorType.kBrushless);
+leftRear = new CANSparkMax(10, MotorType.kBrushless);
  leftRear.setInverted(false);
 
 left = new MotorControllerGroup(leftFront, leftRear  );
  addChild("Left",left);
  
 
-rightFront = new CANSparkMax(2, MotorType.kBrushless);
+rightFront = new CANSparkMax(11, MotorType.kBrushless);
  rightFront.setInverted(true);
 
-rightRear = new CANSparkMax(3, MotorType.kBrushless);
+rightRear = new CANSparkMax(12, MotorType.kBrushless);
  rightRear.setInverted(true);
 
 right = new MotorControllerGroup(rightFront, rightRear  );

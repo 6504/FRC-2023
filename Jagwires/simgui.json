@@ -41,10 +41,13 @@
   },
   "NetworkTables": {
     "transitory": {
+      "LiveWindow": {
+        "open": true
+      },
+      "Shuffleboard": {
+        "open": true
+      },
       "SmartDashboard": {
-        "diffDrive": {
-          "open": true
-        },
         "open": true
       }
     }
