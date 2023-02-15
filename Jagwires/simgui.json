@@ -52,7 +52,10 @@
         }
       },
       "SmartDashboard": {
-        "open": true
+        "open": true,
+        "vision": {
+          "open": true
+        }
       }
     }
   }
