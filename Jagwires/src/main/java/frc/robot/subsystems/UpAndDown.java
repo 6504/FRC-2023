@@ -16,8 +16,10 @@ package frc.robot.subsystems;
 import frc.robot.commands.*;
 
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.REVPhysicsSim;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
+import edu.wpi.first.math.system.plant.DCMotor;
 import edu.wpi.first.wpilibj.CAN;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -74,6 +76,11 @@ private CANSparkMax centerLift;
     // negative means lift goes down
     public void move(double power) {
         centerLift.set(power);
+    }
+
+    
+    public void simulationInit() {
+        REVPhysicsSim.getInstance().addSparkMax(centerLift, DCMotor.getNEO(1));
     }
 
 }

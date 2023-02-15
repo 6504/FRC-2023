@@ -149,6 +149,7 @@ public GenericHID getPS4Controller1() {
 
   public void simulationInit() {
     m_driveTrain.simulationInit();
+    m_upAndDown.simulationInit();
   }
   
 

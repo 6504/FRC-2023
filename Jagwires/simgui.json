@@ -6,6 +6,11 @@
           "open": true
         }
       },
+      "SPARK MAX [16]": {
+        "header": {
+          "open": true
+        }
+      },
       "SPARK MAX [2]": {
         "header": {
           "open": true
@@ -42,10 +47,9 @@
   "NetworkTables": {
     "transitory": {
       "LiveWindow": {
-        "open": true
-      },
-      "Shuffleboard": {
-        "open": true
+        ".status": {
+          "open": true
+        }
       },
       "SmartDashboard": {
         "open": true
