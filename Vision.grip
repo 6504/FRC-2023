@@ -9,6 +9,9 @@
     <grip:ImageFile>
       <property name="path" value="C:\Users\Jagwire\Documents\GitHub\FRC-2023\TestImages\WIN_20230214_17_19_19_Pro.jpg"/>
     </grip:ImageFile>
+    <grip:Camera>
+      <property name="address" value="http://wpilibpi.local:1181/stream.mjpg"/>
+    </grip:Camera>
   </sources>
   <steps>
     <grip:Step name="Blur">
@@ -17,40 +20,40 @@
         <value>BOX</value>
       </grip:Input>
       <grip:Input step="0" socket="2">
-        <value>5.40540411665633</value>
+        <value>1.201201344395543</value>
       </grip:Input>
-      <grip:Output step="0" socket="0" previewed="false"/>
+      <grip:Output step="0" socket="0" previewed="true"/>
     </grip:Step>
     <grip:Step name="HSV Threshold">
       <grip:Input step="1" socket="0"/>
       <grip:Input step="1" socket="1">
         <value>
-          <double>74.46043860140463</double>
-          <double>96.5993191502361</double>
+          <double>74.46043551396978</double>
+          <double>91.47986131948811</double>
         </value>
       </grip:Input>
       <grip:Input step="1" socket="2">
         <value>
           <double>0.0</double>
-          <double>141.86005165959384</double>
+          <double>130.25595886308588</double>
         </value>
       </grip:Input>
       <grip:Input step="1" socket="3">
         <value>
-          <double>246.13308842233616</double>
+          <double>224.73020489267307</double>
           <double>255.0</double>
         </value>
       </grip:Input>
-      <grip:Output step="1" socket="0" previewed="false"/>
+      <grip:Output step="1" socket="0" previewed="true"/>
     </grip:Step>
     <grip:Step name="Find Lines">
       <grip:Input step="2" socket="0"/>
-      <grip:Output step="2" socket="0" previewed="false"/>
+      <grip:Output step="2" socket="0" previewed="true"/>
     </grip:Step>
     <grip:Step name="Filter Lines">
       <grip:Input step="3" socket="0"/>
       <grip:Input step="3" socket="1">
-        <value>20</value>
+        <value>20.0</value>
       </grip:Input>
       <grip:Input step="3" socket="2">
         <value>
@@ -87,24 +90,24 @@
   </steps>
   <connections>
     <grip:Connection>
+      <grip:Output step="0" socket="0" previewed="true"/>
+      <grip:Input step="1" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output source="3" socket="0" previewed="true"/>
+      <grip:Input step="0" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
       <grip:Output step="3" socket="0" previewed="true"/>
       <grip:Input step="4" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output step="2" socket="0" previewed="false"/>
+      <grip:Output step="2" socket="0" previewed="true"/>
       <grip:Input step="3" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output source="2" socket="0" previewed="true"/>
-      <grip:Input step="0" socket="0"/>
-    </grip:Connection>
-    <grip:Connection>
-      <grip:Output step="1" socket="0" previewed="false"/>
+      <grip:Output step="1" socket="0" previewed="true"/>
       <grip:Input step="2" socket="0"/>
-    </grip:Connection>
-    <grip:Connection>
-      <grip:Output step="0" socket="0" previewed="false"/>
-      <grip:Input step="1" socket="0"/>
     </grip:Connection>
   </connections>
   <settings>
