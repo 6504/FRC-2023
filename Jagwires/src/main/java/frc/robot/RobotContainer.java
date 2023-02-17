@@ -71,7 +71,7 @@ private final GenericHID pS4Controller1 = new GenericHID(Constants.kJoystickPort
 
     // SmartDashboard Buttons
     SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
-    SmartDashboard.putData("Balance", new Balance());
+    SmartDashboard.putData("Balance", new Balance(m_driveTrain));
     SmartDashboard.putData("Pickup", new Pickup());
     SmartDashboard.putData("Extend", new Extend());
     SmartDashboard.putData("Retract", new Retract());
