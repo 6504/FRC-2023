@@ -12,6 +12,7 @@
 
 package frc.robot.subsystems;
 
+import frc.robot.Constants;
 import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -90,11 +91,15 @@ public class DriveTrain extends SubsystemBase {
         differentialDrive1.setExpiration(0.1);
         differentialDrive1.setMaxOutput(1.0);
 
-        // TODO: determine real conversion factor from ticks to meters!
-        leftFront.getEncoder().setPositionConversionFactor(0.0001);
-        rightFront.getEncoder().setPositionConversionFactor(0.0001);
-        leftRear.getEncoder().setPositionConversionFactor(0.0001);
-        rightRear.getEncoder().setPositionConversionFactor(0.0001);
+        leftFront.getEncoder().setPosition(0);
+        rightFront.getEncoder().setPosition(0);
+        leftRear.getEncoder().setPosition(0);
+        rightRear.getEncoder().setPosition(0);
+
+        leftFront.getEncoder().setPositionConversionFactor(Constants.kMetersPerRevolution);
+        rightFront.getEncoder().setPositionConversionFactor(Constants.kMetersPerRevolution);
+        leftRear.getEncoder().setPositionConversionFactor(Constants.kMetersPerRevolution);
+        rightRear.getEncoder().setPositionConversionFactor(Constants.kMetersPerRevolution);
 
         SmartDashboard.putData("Field", m_field);
         SmartDashboard.putData("diffDrive", differentialDrive1);
@@ -144,6 +149,8 @@ public class DriveTrain extends SubsystemBase {
                 rightFront.getEncoder().getPosition());
 
         m_field.setRobotPose(m_odometry.getPoseMeters());
+
+        SmartDashboard.putNumber("leftEncoder", leftFront.getEncoder().getPosition());
     }
 
     @Override
@@ -184,6 +191,11 @@ public class DriveTrain extends SubsystemBase {
 
     public double getPitch() {
         return m_navx.getPitch();
+    }
+
+    public double getDistance(){
+        return leftFront.getEncoder().getPosition();
+
     }
 
     public void setIdleMode(IdleMode idleMode) {
