@@ -85,9 +85,14 @@ private CANSparkMax centerLift;
             
             centerLift.set(0); //stop from moving up
         } 
+        else if(isTooLow() == true && power < 0) { //if lift is too low and driver tries to move lift down
+            
+            centerLift.set(0); //stop from moving down
+        } 
         else {
             centerLift.set(power); //if lift is not too high or if moving down, keep going
         }
+        
     }
 
     
@@ -97,7 +102,12 @@ private CANSparkMax centerLift;
 
     public boolean isTooHigh(){
 
-        return (centerLift.getEncoder().getPosition() > 20);
+        return (centerLift.getEncoder().getPosition() > 68);
+
+    }
+    public boolean isTooLow(){
+
+        return (centerLift.getEncoder().getPosition() < 0);
 
     }
 
