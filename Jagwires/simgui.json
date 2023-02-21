@@ -37,7 +37,7 @@
     },
     "windows": {
       "/SmartDashboard/Field": {
-        "image": "C:\\Users\\Jagwire\\Documents\\DeepSpace\\2019-field.jpg",
+        "image": "C:\\Users\\Jagwire\\Desktop\\2023-field.png",
         "window": {
           "visible": true
         }
@@ -52,6 +52,9 @@
         }
       },
       "SmartDashboard": {
+        "Field": {
+          "open": true
+        },
         "open": true,
         "vision": {
           "open": true
