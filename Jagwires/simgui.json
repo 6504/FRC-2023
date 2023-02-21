@@ -55,11 +55,17 @@
         "Field": {
           "open": true
         },
+        "diffDrive": {
+          "open": true
+        },
         "open": true,
         "vision": {
           "open": true
         }
       }
     }
+  },
+  "NetworkTables View": {
+    "visible": false
   }
 }

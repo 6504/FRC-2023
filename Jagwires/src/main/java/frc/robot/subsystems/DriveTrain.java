@@ -150,7 +150,8 @@ public class DriveTrain extends SubsystemBase {
 
         m_field.setRobotPose(m_odometry.getPoseMeters());
 
-        SmartDashboard.putNumber("leftEncoder", leftFront.getEncoder().getPosition());
+        SmartDashboard.putNumber("diffDrive/leftEncoder", leftFront.getEncoder().getPosition());
+        SmartDashboard.putNumber("diffDrive/rightEncoder", rightFront.getEncoder().getPosition());
     }
 
     @Override
