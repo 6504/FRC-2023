@@ -94,7 +94,7 @@ private final GenericHID pS4Controller1 = new GenericHID(Constants.kJoystickPort
 
     m_upAndDown.setDefaultCommand(
       new TeleopUpAndDown(
-        () -> (pS4Controller1.getRawAxis(2) - pS4Controller1.getRawAxis(3)), m_upAndDown));
+        () -> (pS4Controller1.getRawAxis(3) - pS4Controller1.getRawAxis(2)), m_upAndDown));
 
 
 
