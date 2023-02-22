@@ -23,11 +23,11 @@ import java.util.function.DoubleSupplier;
 /**
  *
  */
-public class Pickup extends CommandBase {
+public class Eject extends CommandBase {
 
     private final Intake m_intake;
 
-    public Pickup(Intake intake) {
+    public Eject(Intake intake) {
 
 
         m_intake = intake;
@@ -43,7 +43,7 @@ public class Pickup extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        m_intake.spin(-1.0);
+        m_intake.spin(1.0);
     }
 
     // Called once the command ends or is interrupted.
