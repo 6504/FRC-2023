@@ -59,6 +59,8 @@ private CANSparkMax centerLift;
         centerLift = new CANSparkMax(16, MotorType.kBrushless);
         centerLift.setInverted(true);
         centerLift.setIdleMode(IdleMode.kBrake);
+        centerLift.setOpenLoopRampRate(0.5);
+        centerLift.setClosedLoopRampRate(0.5);
         m_pidController = centerLift.getPIDController();
 
         // Lift safety
