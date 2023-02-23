@@ -98,6 +98,7 @@ public class DriveTrain extends SubsystemBase {
         differentialDrive1.setSafetyEnabled(true);
         differentialDrive1.setExpiration(0.1);
         differentialDrive1.setMaxOutput(1.0);
+        differentialDrive1.setDeadband(0.01);
 
         leftFront.getEncoder().setPosition(0);
         rightFront.getEncoder().setPosition(0);
