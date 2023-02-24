@@ -150,6 +150,9 @@ pS4Button1.onTrue(new Eject(m_intake).withInterruptBehavior(InterruptionBehavior
         
         final JoystickButton aButton = new JoystickButton(pS4Controller1, 0);
         final JoystickButton bButton = new JoystickButton(pS4Controller1, 1);
+        final JoystickButton yButton = new JoystickButton(pS4Controller1, 3);
+
+        yButton.toggleOnTrue(new SlowMode(m_driveTrain));
 
   }
 

@@ -63,6 +63,8 @@ public class DriveTrain extends SubsystemBase {
     private DifferentialDrive differentialDrive1;
     private Field2d m_field = new Field2d();
 
+    private boolean m_slowMode = false;
+
     /**
     *
     */
@@ -196,7 +198,12 @@ public class DriveTrain extends SubsystemBase {
     }
 
     public void POVdrive(double speed, double rotation) {
-        differentialDrive1.arcadeDrive(speed, rotation);
+        double powerMultiplier = 1.0;
+
+        if (m_slowMode == true) {
+            powerMultiplier = Constants.kSlowModePowerMultiplier;
+        }
+        differentialDrive1.arcadeDrive(speed*powerMultiplier, rotation*powerMultiplier);
     }
 
     public double getPitch() {
@@ -220,6 +227,10 @@ public class DriveTrain extends SubsystemBase {
         REVPhysicsSim.getInstance().addSparkMax(leftRear, DCMotor.getNEO(1));
         REVPhysicsSim.getInstance().addSparkMax(rightFront, DCMotor.getNEO(1));
         REVPhysicsSim.getInstance().addSparkMax(rightFront, DCMotor.getNEO(1));
+    }
+
+    public void setSlowMode(boolean b) {
+        m_slowMode = b;
     }
 
 }
