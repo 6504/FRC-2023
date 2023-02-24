@@ -26,4 +26,8 @@ public final class Constants {
   public static final double kMetersPerRevolution = 0.0391761383859716;
 
   public static final double kLiftMaxPosition = 68.0;
+
+  public static final double kLiftSlowModePosition = 34.0;
+
+  public static final double kSlowModePowerMultiplier = 0.25;
 }
