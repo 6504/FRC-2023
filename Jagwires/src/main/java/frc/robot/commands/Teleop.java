@@ -61,12 +61,6 @@ public class Teleop extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        
-        /*if(m_liftHeight.getAsDouble() >= Constants.kLiftSlowModePosition) {
-            m_driveTrain.setSlowMode(true);
-        } else {
-            m_driveTrain.setSlowMode(false);
-        }*/
 
         m_driveTrain.POVdrive(m_power.getAsDouble(), m_turnAngle.getAsDouble());
     }
