@@ -96,6 +96,7 @@ private final GenericHID pS4Controller1 = new GenericHID(Constants.kJoystickPort
       new Teleop(
         () -> -lessSensitive(pS4Controller1.getRawAxis(1)),
         () -> -0.5 * lessSensitive(pS4Controller1.getRawAxis(0)),
+        () -> m_upAndDown.getLiftPosition(),
         m_driveTrain));
 
     m_upAndDown.setDefaultCommand(
