@@ -233,4 +233,9 @@ public class DriveTrain extends SubsystemBase {
         m_slowMode = b;
     }
 
+    public boolean getSlowMode()
+    {
+        return m_slowMode;
+    }
+
 }

@@ -29,5 +29,5 @@ public final class Constants {
 
   public static final double kLiftSlowModePosition = 34.0;
 
-  public static final double kSlowModePowerMultiplier = 0.25;
+  public static final double kSlowModePowerMultiplier = 0.35;
 }

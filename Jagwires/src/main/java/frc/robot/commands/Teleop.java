@@ -62,11 +62,11 @@ public class Teleop extends CommandBase {
     @Override
     public void execute() {
         
-        if(m_liftHeight.getAsDouble() >= Constants.kLiftSlowModePosition) {
+        /*if(m_liftHeight.getAsDouble() >= Constants.kLiftSlowModePosition) {
             m_driveTrain.setSlowMode(true);
         } else {
             m_driveTrain.setSlowMode(false);
-        }
+        }*/
 
         m_driveTrain.POVdrive(m_power.getAsDouble(), m_turnAngle.getAsDouble());
     }
