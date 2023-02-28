@@ -60,9 +60,9 @@ private CANSparkMax rotator;
         m_pidController = rotator.getPIDController();
 
         // PID coefficients
-        kP = 1.0; 
-        kI = 0.01;
-        kD = 0; 
+        kP = 0.05; 
+        kI = 0.0001;
+        kD = 0.0; 
         kIz = 0; 
         kFF = 0; 
         kMaxOutput = 1; 
@@ -92,7 +92,7 @@ private CANSparkMax rotator;
     }
     
     public void move(double speed) {
-        if (Math.abs(speed) < 0.1) {
+        if (Math.abs(speed) < 0.05) {
             m_pidController.setReference(rotator.getEncoder().getPosition(), CANSparkMax.ControlType.kPosition);
         } else {
             rotator.set(speed);

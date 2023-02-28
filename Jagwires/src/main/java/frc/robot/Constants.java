@@ -18,6 +18,8 @@ public final class Constants {
   }
   
   public static final int kJoystickPort = 0;
+  public static final int kJoystickPort2 = 1;
+
 
   public static final double kOffBalanceThresholdDegrees = 2.5;
 
