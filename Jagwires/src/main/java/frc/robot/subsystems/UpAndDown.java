@@ -71,9 +71,9 @@ private CANSparkMax centerLift;
         centerLift.setSoftLimit(SoftLimitDirection.kReverse, (float) 0);
        
         // PID coefficients
-        kP = 1.0; 
+        kP = 0.8; 
         kI = 0.01;
-        kD = 0; 
+        kD = 0.01; 
         kIz = 0; 
         kFF = 0; 
         kMaxOutput = 1; 
