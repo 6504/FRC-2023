@@ -31,5 +31,7 @@ public final class Constants {
 
   public static final double kLiftSlowModePosition = 20.0;
 
-  public static final double kSlowModePowerMultiplier = 0.35;
+  public static final double kSlowModePowerMultiplier = 0.15;
+
+  public static final double kMaxSpeed = 5691.0;  
 }
