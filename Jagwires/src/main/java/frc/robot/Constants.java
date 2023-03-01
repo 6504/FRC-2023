@@ -34,4 +34,6 @@ public final class Constants {
   public static final double kSlowModePowerMultiplier = 0.15;
 
   public static final double kMaxSpeed = 5691.0;  
+
+  public static final double kMinWristPosition = -14.0;
 }
