@@ -201,6 +201,9 @@ crossButton.whileTrue(new TeleopPoleTracking(
 
     
     final JoystickButton aButton = new JoystickButton(controller, 1);
+    aButton.onTrue(Commands.parallel(new Teleop(() -> 0.1, m_driveTrain), new Pickup(m_intake))
+      .withTimeout(1.0));
+      
     final JoystickButton bButton = new JoystickButton(controller, 2);
     final JoystickButton yButton = new JoystickButton(controller, 4);
 
