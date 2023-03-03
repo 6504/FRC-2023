@@ -3,7 +3,7 @@
 #define NUM_LEDS 64
 CRGB leds[NUM_LEDS];
 
-char mode = 'b';
+volatile char mode = 'b';
 
 void setup() {
   Serial.begin(9600);

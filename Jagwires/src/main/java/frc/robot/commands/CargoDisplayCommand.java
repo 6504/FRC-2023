@@ -5,21 +5,22 @@
 package frc.robot.commands;
 
 import frc.robot.subsystems.CargoDisplay;
-import edu.wpi.first.wpilibj.DriverStation;
-import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
-public class DisplayCube extends CommandBase {
+public class CargoDisplayCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final CargoDisplay m_subsystem;
+  private final String m_command;
 
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public DisplayCube(CargoDisplay subsystem) {
+  public CargoDisplayCommand(String command, CargoDisplay subsystem) {
+    m_command = command;
+
     m_subsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
@@ -28,15 +29,7 @@ public class DisplayCube extends CommandBase {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    String command = "";
-    
-    if (DriverStation.getAlliance() == Alliance.Blue) {
-        command = "B";
-    } else if (DriverStation.getAlliance() == Alliance.Red) {
-        command = "R";
-    }
-
-    m_subsystem.sendCommand(command);
+    m_subsystem.sendCommand(m_command);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
