@@ -118,7 +118,7 @@
               "_showGlyph": false
             }
           },
-          "4,0": {
+          "0,2": {
             "size": [
               1,
               1
@@ -127,32 +127,6 @@
               "_type": "Command",
               "_source0": "network_table:///SmartDashboard/Autonomous Command",
               "_title": "Autonomous Command",
-              "_glyph": 148,
-              "_showGlyph": false
-            }
-          },
-          "5,0": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/liftEncoder",
-              "_title": "liftEncoder",
-              "_glyph": 148,
-              "_showGlyph": false
-            }
-          },
-          "6,0": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/WristPosition",
-              "_title": "WristPosition",
               "_glyph": 148,
               "_showGlyph": false
             }
@@ -183,45 +157,6 @@
               "_showGlyph": false
             }
           },
-          "4,1": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/diffDrive/leftSpeed",
-              "_title": "diffDrive/leftSpeed",
-              "_glyph": 148,
-              "_showGlyph": false
-            }
-          },
-          "5,1": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/diffDrive/rightSpeed",
-              "_title": "diffDrive/rightSpeed",
-              "_glyph": 148,
-              "_showGlyph": false
-            }
-          },
-          "6,1": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Text View",
-              "_source0": "network_table:///SmartDashboard/diffDrive/leftSetSpeed",
-              "_title": "diffDrive/leftSetSpeed",
-              "_glyph": 148,
-              "_showGlyph": false
-            }
-          },
           "7,1": {
             "size": [
               1,
@@ -233,6 +168,26 @@
               "_title": "diffDrive/rightSetSpeed",
               "_glyph": 148,
               "_showGlyph": false
+            }
+          },
+          "4,0": {
+            "size": [
+              3,
+              2
+            ],
+            "content": {
+              "_type": "Camera Stream",
+              "_title": "Camera Stream",
+              "_glyph": 148,
+              "_showGlyph": false,
+              "Crosshair/Show crosshair": true,
+              "Crosshair/Crosshair color": "#FFFFFFFF",
+              "Controls/Show controls": true,
+              "Controls/Rotation": "NONE",
+              "compression": -1.0,
+              "fps": -1,
+              "imageWidth": -1,
+              "imageHeight": -1
             }
           }
         }
@@ -253,9 +208,9 @@
     }
   ],
   "windowGeometry": {
-    "x": 10.666666984558105,
-    "y": 5.333333492279053,
-    "width": 1280.0,
-    "height": 543.3333129882812
+    "x": -7.333333492279053,
+    "y": -7.333333492279053,
+    "width": 1294.6666259765625,
+    "height": 694.6666870117188
   }
 }
