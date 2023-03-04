@@ -8,4 +8,9 @@ public class DisplayCone extends CargoDisplayCommand {
     public DisplayCone(CargoDisplay subsystem) {
         super("C", subsystem);
     }
+
+    @Override
+    public boolean runsWhenDisabled() {
+        return true;
+    }
 }
