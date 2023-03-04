@@ -64,7 +64,7 @@ public class DriveForwardAuto extends CommandBase {
     @Override
     public boolean isFinished() {
         
-        if(m_driveTrain.getDistance() > -4.0){
+        if(m_driveTrain.getDistance() < -4.0){
             return true;
 
         } else {
