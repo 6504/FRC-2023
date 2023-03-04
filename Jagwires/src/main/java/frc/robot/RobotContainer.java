@@ -97,8 +97,8 @@ private final GenericHID intakeController = new GenericHID(Constants.kJoystickPo
     // Configure default commands
     m_driveTrain.setDefaultCommand(
       new Teleop(
-        () -> -lessSensitive(driveController.getRawAxis(1)),
-        () -> -0.8 * lessSensitive(driveController.getRawAxis(4)),
+        () -> -driveController.getRawAxis(1),
+        () -> -0.8 * driveController.getRawAxis(4),
         () -> m_upAndDown.getLiftPosition(),
         m_driveTrain));
 
