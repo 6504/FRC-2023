@@ -28,6 +28,7 @@ void setup() {
 ISR (SPI_STC_vect)
 {
   mode = SPDR;
+  Serial.println(mode);
 }
 
 constexpr unsigned int getIndex(unsigned int col, unsigned int row)
