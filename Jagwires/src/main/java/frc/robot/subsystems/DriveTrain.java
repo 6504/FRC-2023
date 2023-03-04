@@ -132,7 +132,7 @@ public class DriveTrain extends SubsystemBase {
         kI = 0.0000005;
         kD = 0.0; 
         kIz = 0; 
-        kFF = 0; 
+        kFF = 0.00000481; 
         kMaxOutput = 1; 
         kMinOutput = -1;
 
@@ -240,7 +240,7 @@ public class DriveTrain extends SubsystemBase {
         leftSpeed = powerMultiplier * (forwardPower * Constants.kMaxSpeed - rotation * Constants.kMaxSpeed);
         rightSpeed = powerMultiplier * (forwardPower * Constants.kMaxSpeed + rotation * Constants.kMaxSpeed);
 
-        if(Math.abs(leftSpeed) > 10)
+        if(Math.abs(leftSpeed) > 100)
         {
             m_pidControllerLeft.setReference(leftSpeed, ControlType.kVelocity);
         }
@@ -250,7 +250,7 @@ public class DriveTrain extends SubsystemBase {
             leftFront.set(0);
         }
 
-        if(Math.abs(rightSpeed) > 10)
+        if(Math.abs(rightSpeed) > 100)
         {
             m_pidControllerRight.setReference(rightSpeed, ControlType.kVelocity);
         }

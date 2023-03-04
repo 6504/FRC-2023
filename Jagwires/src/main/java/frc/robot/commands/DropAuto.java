@@ -46,7 +46,7 @@ public class DropAuto extends CommandBase {
     public void initialize() {
         m_driveTrain.encoderReset();
         m_driveTrain.POVdrive(0.5, 0);
-        m_driveTrain.setLiftHeightSupplier();
+        //m_driveTrain.setLiftHeightSupplier();
 
 
     }

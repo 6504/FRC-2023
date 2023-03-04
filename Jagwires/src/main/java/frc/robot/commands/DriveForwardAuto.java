@@ -45,15 +45,13 @@ public class DriveForwardAuto extends CommandBase {
     @Override
     public void initialize() {
         m_driveTrain.encoderReset();
-        m_driveTrain.POVdrive(-0.5, 0);
-
 
     }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        m_driveTrain.POVdrive(-0.1, 0);
+        m_driveTrain.POVdrive(-0.2, 0);
     }
 
     // Called once the command ends or is interrupted.
@@ -66,7 +64,7 @@ public class DriveForwardAuto extends CommandBase {
     @Override
     public boolean isFinished() {
         
-        if(m_driveTrain.getDistance() > -5.0){
+        if(m_driveTrain.getDistance() > -4.0){
             return true;
 
         } else {
