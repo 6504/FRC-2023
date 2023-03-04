@@ -226,7 +226,7 @@ public class DriveTrain extends SubsystemBase {
     // here. Call these from Commands.
 
     public void POVdrive(double forwardPower, double rotation) {
-        double powerMultiplier = 1.0;
+        double powerMultiplier = 0.75;
         double leftSpeed = 0.0;
         double rightSpeed = 0.0;
 
