@@ -300,4 +300,14 @@ public class DriveTrain extends SubsystemBase {
     public void setLiftHeightSupplier(DoubleSupplier liftHeight) {
         m_liftHeight= liftHeight;
     }
+
+    public void encoderReset(){
+
+       leftFront.getEncoder().setPosition(0);
+       leftRear.getEncoder().setPosition(0); 
+       rightFront.getEncoder().setPosition(0); 
+       rightRear.getEncoder().setPosition(0); 
+
+
+    }
 }
