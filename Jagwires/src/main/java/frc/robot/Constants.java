@@ -36,4 +36,7 @@ public final class Constants {
   public static final double kMaxSpeed = 5691.0;  
 
   public static final double kMinWristPosition = -14.0;
+
+  public static final double kRampRate = 0.5;
+
 }

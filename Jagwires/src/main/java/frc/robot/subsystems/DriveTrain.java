@@ -80,24 +80,24 @@ public class DriveTrain extends SubsystemBase {
     public DriveTrain() {
         leftFront = new CANSparkMax(13, MotorType.kBrushless);
         leftFront.setInverted(false);
-        leftFront.setOpenLoopRampRate(0.5);
-        leftFront.setClosedLoopRampRate(0.5);
+        leftFront.setOpenLoopRampRate(Constants.kRampRate);
+        leftFront.setClosedLoopRampRate(Constants.kRampRate);
 
         leftRear = new CANSparkMax(10, MotorType.kBrushless);
         leftRear.setInverted(false);
-        leftRear.setOpenLoopRampRate(0.5);
-        leftRear.setClosedLoopRampRate(0.5);
+        leftRear.setOpenLoopRampRate(Constants.kRampRate);
+        leftRear.setClosedLoopRampRate(Constants.kRampRate);
         leftRear.follow(leftFront);
 
         rightFront = new CANSparkMax(11, MotorType.kBrushless);
         rightFront.setInverted(true);
-        rightFront.setOpenLoopRampRate(0.5);
-        rightFront.setClosedLoopRampRate(0.5);
+        rightFront.setOpenLoopRampRate(Constants.kRampRate);
+        rightFront.setClosedLoopRampRate(Constants.kRampRate);
 
         rightRear = new CANSparkMax(12, MotorType.kBrushless);
         rightRear.setInverted(true);
-        rightRear.setOpenLoopRampRate(0.5);
-        rightRear.setClosedLoopRampRate(0.5);
+        rightRear.setOpenLoopRampRate(Constants.kRampRate);
+        rightRear.setClosedLoopRampRate(Constants.kRampRate);
         rightRear.follow(rightFront);
 
         leftFront.getEncoder().setPosition(0);
