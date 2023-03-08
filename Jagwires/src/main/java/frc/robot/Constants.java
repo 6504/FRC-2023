@@ -24,6 +24,7 @@ public final class Constants {
   public static final double kOffBalanceThresholdDegrees = 2.5;
 
   public static final double kBalancePowerMultiplier = 5.0;
+  public static final double kBalanceMaxPower = 0.1;
 
   public static final double kMetersPerRevolution = 0.0391761383859716;
 
@@ -38,5 +39,12 @@ public final class Constants {
   public static final double kMinWristPosition = -14.0;
 
   public static final double kRampRate = 0.5;
+
+  public static final double kHighLift = 65.0;
+
+  public static final double kMidLift = 40.0;
+ 
+  public static final double kLowLift = 20.0;
+
 
 }

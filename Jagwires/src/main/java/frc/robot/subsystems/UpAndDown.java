@@ -155,7 +155,6 @@ public boolean IsAtPosition(){
    return Math.abs(centerLift.getEncoder().getPosition()-(m_setPosition)) < 0.1;
 }
 public double getLiftPosition(){
-
     return centerLift.getEncoder().getPosition();
 
 }
