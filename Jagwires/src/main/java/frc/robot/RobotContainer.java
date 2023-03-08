@@ -119,7 +119,10 @@ private final GenericHID intakeController = new GenericHID(Constants.kJoystickPo
     m_chooser.addOption("Eject Auto", new EjectAuto(m_intake).andThen(new DriveForwardAuto(m_driveTrain)));
     //TODO: Ad buttons for each level to score
     //auto: 1. score highest level 2. balance
-    m_chooser.addOption("Lift High Auto", new AutoLift(m_upAndDown, Constants.kHighLift));
+    m_chooser.addOption("Lift High Auto",
+      new AutoLift(m_upAndDown, Constants.kHighLift)
+      .andThen(new EjectAuto(m_intake))
+      .andThen(new DriveForwardAuto(m_driveTrain)));
     
   
 

@@ -60,7 +60,7 @@ public class EjectAuto extends CommandBase {
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
-        return (timer.get() > 1.0);
+        return (timer.hasElapsed(1.0));
     }
 
     @Override
