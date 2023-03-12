@@ -35,12 +35,8 @@ public class Balance extends CommandBase {
 
     private DriveTrain m_DriveTrain;
 
-    private boolean isBalanced = false;
     private Timer m_timer = new Timer();
-
-    // TODO: Safety: if angle is too big, then stop
-    // TODO: Get wheel encoder position at start of balance. IF you drive more than 1 meter, then stop
-    // TODO: Stop after 5 seconds?
+    private double m_startPosition = 0;
 
     public Balance(DriveTrain driveTrain) {
         m_DriveTrain = driveTrain;
@@ -50,7 +46,12 @@ public class Balance extends CommandBase {
     // Called when the command is initially scheduled.
     @Override
     public void initialize() {
-        m_DriveTrain.setIdleMode(IdleMode.kBrake);
+        // Get starting position for safety
+        m_startPosition = m_DriveTrain.getDistance();
+
+        // Start timer
+        m_timer.reset();
+        m_timer.start();
     }
 
     // Called every time the scheduler runs while the command is scheduled.
@@ -70,19 +71,34 @@ public class Balance extends CommandBase {
         else
         {
             m_DriveTrain.POVdrive(0, 0);
-            m_timer.start();
         }
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
-        m_DriveTrain.setIdleMode(IdleMode.kCoast);
+        m_DriveTrain.POVdrive(0, 0);
     }
 
     // Returns true when the command should end.
     @Override
     public boolean isFinished() {
+
+        // End command if we drove too far
+        if (Math.abs(m_DriveTrain.getDistance() - m_startPosition) > 2.0) {
+            return true;
+        }
+
+        // End command if the angle is too big
+        if (Math.abs(m_DriveTrain.getPitch()) > 45.0) {
+            return true;
+        }
+
+        // End command if we took too long
+        if (m_timer.hasElapsed(5.0)) {
+            return true;
+        }
+
         return false;
     }
 
