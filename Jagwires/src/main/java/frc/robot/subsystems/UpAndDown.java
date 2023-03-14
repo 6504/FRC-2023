@@ -79,8 +79,8 @@ private CANSparkMax centerLift;
         kD = 0.01; 
         kIz = 0; 
         kFF = 0; 
-        kMaxOutput = 1; 
-        kMinOutput = -1;
+        kMaxOutput = 0.3; 
+        kMinOutput = -0.3;
 
         // set PID coefficients
         m_pidController.setP(kP);
@@ -133,6 +133,10 @@ public void GotoPosition(double position){
     if(position>=0 && position<Constants.kLiftMaxPosition) {
         m_pidController.setReference(position, CANSparkMax.ControlType.kPosition);
         m_setPosition=position;
+    }
+    else
+    {
+        System.out.println("GoToPosition() " + position + " out of range");
     }
 
 }

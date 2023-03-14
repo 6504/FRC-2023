@@ -82,7 +82,7 @@ private final GenericHID intakeController = new GenericHID(Constants.kJoystickPo
 
     // SmartDashboard Buttons
     SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
-    //SmartDashboard.putData("Balance", new Balance(m_driveTrain));
+    SmartDashboard.putData("Balance", new Balance(m_driveTrain));
     SmartDashboard.putData("DisplayCone", new DisplayCone(m_cargoDisplay));
     SmartDashboard.putData("DisplayCube", new DisplayCube(m_cargoDisplay));
     SmartDashboard.putData("Green", new CargoDisplayCommand("G", m_cargoDisplay));
@@ -123,13 +123,17 @@ private final GenericHID intakeController = new GenericHID(Constants.kJoystickPo
     m_chooser.addOption("Lift High Mid Pos Auto",
       new AutoLift(m_upAndDown, Constants.kHighLift)
       .andThen(new EjectAuto(m_intake))
-      .andThen(new DriveAuto(m_driveTrain, 4.0))
+      .asProxy()
+      .andThen(new AutoLift(m_upAndDown, Constants.kLowLift))
+      .andThen(new DriveAuto(m_driveTrain, -4.0))
       .andThen(new Balance(m_driveTrain)));
       
     m_chooser.addOption("Lift High Right/Left Pos Auto",
       new AutoLift(m_upAndDown, Constants.kHighLift)
       .andThen(new EjectAuto(m_intake))
-      .andThen(new DriveAuto(m_driveTrain, 4.0)));
+      .asProxy()
+      .andThen(new AutoLift(m_upAndDown, Constants.kLowLift))
+      .andThen(new DriveAuto(m_driveTrain, -4.0)));
 
   
     

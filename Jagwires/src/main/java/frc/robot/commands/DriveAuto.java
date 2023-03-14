@@ -63,6 +63,7 @@ public class DriveAuto extends CommandBase {
     @Override
     public void end(boolean interrupted) {
         m_driveTrain.POVdrive(0, 0);
+        System.out.println("True Drive done");
     }
 
     // Returns true when the command should end.
@@ -74,6 +75,7 @@ public class DriveAuto extends CommandBase {
 
         } else {
             return false;
+            
         }
         
     }
