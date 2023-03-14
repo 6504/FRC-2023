@@ -42,7 +42,7 @@ public final class Constants {
 
   public static final double kHighLift = 65.0;
 
-  public static final double kMidLift = 40.0;
+  public static final double kMidLift = 50.0;
  
   public static final double kLowLift = 20.0;
 
