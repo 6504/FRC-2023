@@ -24,7 +24,7 @@ public final class Constants {
   public static final double kOffBalanceThresholdDegrees = 2.5;
 
   public static final double kBalancePowerMultiplier = 5.0;
-  public static final double kBalanceMaxPower = 0.1;
+  public static final double kBalanceMaxPower = 0.05;
 
   public static final double kMetersPerRevolution = 0.0391761383859716;
 
@@ -44,7 +44,7 @@ public final class Constants {
 
   public static final double kMidLift = 50.0;
  
-  public static final double kLowLift = 20.0;
+  public static final double kLowLift = 10.0;
 
 
 }

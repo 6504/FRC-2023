@@ -86,16 +86,19 @@ public class Balance extends CommandBase {
 
         // End command if we drove too far
         if (Math.abs(m_DriveTrain.getDistance() - m_startPosition) > 2.0) {
+            System.out.println("Balance Drove too far: " + m_DriveTrain.getDistance());
             return true;
         }
 
         // End command if the angle is too big
         if (Math.abs(m_DriveTrain.getPitch()) > 45.0) {
+            System.out.println("Angle too big: " + m_DriveTrain.getPitch());
             return true;
         }
 
         // End command if we took too long
-        if (m_timer.hasElapsed(5.0)) {
+        if (m_timer.hasElapsed(10.0)) {
+            System.out.println("Time too long: " + m_timer.get());
             return true;
         }
 
