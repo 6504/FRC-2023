@@ -21,7 +21,7 @@ public final class Constants {
   public static final int kJoystickPort2 = 1;
 
 
-  public static final double kOffBalanceThresholdDegrees = 2.5;
+  public static final double kOffBalanceThresholdDegrees = 10.0;
 
   public static final double kBalancePowerMultiplier = 5.0;
   public static final double kBalanceMaxPower = 0.05;
@@ -32,7 +32,7 @@ public final class Constants {
 
   public static final double kLiftSlowModePosition = 20.0;
 
-  public static final double kSlowModePowerMultiplier = 0.15;
+  public static final double kSlowModePowerMultiplier = 0.25;
 
   public static final double kMaxSpeed = 5691.0;  
 
@@ -40,11 +40,11 @@ public final class Constants {
 
   public static final double kRampRate = 0.5;
 
-  public static final double kHighLift = 65.0;
+  public static final double kHighLift = 64.0;
 
   public static final double kMidLift = 50.0;
  
-  public static final double kLowLift = 10.0;
+  public static final double kLowLift = 0.0;
 
 
 }

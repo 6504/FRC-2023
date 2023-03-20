@@ -48,17 +48,19 @@ public class Balance extends CommandBase {
     public void initialize() {
         // Get starting position for safety
         m_startPosition = m_DriveTrain.getDistance();
+        m_DriveTrain.setIdleMode(IdleMode.kBrake);
 
         // Start timer
         m_timer.reset();
         m_timer.start();
+
+        System.out.println("Balance started");
     }
 
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
         double pitchAngleDegrees = m_DriveTrain.getPitch();
-        
         
         if (Math.abs(pitchAngleDegrees) > Constants.kOffBalanceThresholdDegrees)
         { 
@@ -67,17 +69,21 @@ public class Balance extends CommandBase {
             final double positivePower = Math.min(Math.abs(xAxisRate), Constants.kBalanceMaxPower);
             final double power = Math.copySign(positivePower, xAxisRate);
             m_DriveTrain.POVdrive(power, 0);
+            System.out.println("Balance power" + power);
         }
         else
         {
             m_DriveTrain.POVdrive(0, 0);
         }
+        System.out.println("Pitch Angle" + pitchAngleDegrees);
+
     }
 
     // Called once the command ends or is interrupted.
     @Override
     public void end(boolean interrupted) {
         m_DriveTrain.POVdrive(0, 0);
+        m_DriveTrain.setIdleMode(IdleMode.kCoast);
     }
 
     // Returns true when the command should end.
@@ -96,7 +102,7 @@ public class Balance extends CommandBase {
             return true;
         }
 
-        // End command if we took too long
+        // End command if we took too long  
         if (m_timer.hasElapsed(10.0)) {
             System.out.println("Time too long: " + m_timer.get());
             return true;

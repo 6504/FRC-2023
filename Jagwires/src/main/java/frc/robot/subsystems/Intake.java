@@ -87,7 +87,7 @@ private CANSparkMax rolley;
             // Don't let it spin forward for too long
             if (forwardLimitTimer.hasElapsed(0.1))
             {
-                rolley.set(0.05);
+                rolley.set(0.2);
                 forwardLimitTimer.stop();
             }
             else

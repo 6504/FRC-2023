@@ -62,8 +62,9 @@ public class AutoLift extends CommandBase {
     @Override
     public void initialize() {
 
+        //m_UpAndDown.move(0);
         m_UpAndDown.GotoPosition(m_liftLevel);
-        System.out.println("Lift start");
+        System.out.println("Lift start: " + m_liftLevel);
 
         m_timer.reset();
         m_timer.start();
@@ -72,6 +73,20 @@ public class AutoLift extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
+                m_UpAndDown.GotoPosition(m_liftLevel);
+
+        
+        /*if(m_liftLevel > m_UpAndDown.getLiftPosition()){
+            m_UpAndDown.move(0.3);
+            System.out.println(m_UpAndDown.getLiftPosition());
+
+        } 
+        if (m_liftLevel < m_UpAndDown.getLiftPosition()){
+            m_UpAndDown.move(-0.3);
+            System.out.println(m_UpAndDown.getLiftPosition());
+
+        }*/
+            
     }
 
     // Called once the command ends or is interrupted.
