@@ -179,7 +179,12 @@ public class DriveTrain extends SubsystemBase {
     @Override
     public void periodic() {
         // This method will be called once per scheduler run
-
+        /*if (Math.abs(leftFront.getEncoder().getVelocity())<0.1 && Math.abs(rightFront.getEncoder().getVelocity())<0.1 ){
+            setIdleMode(IdleMode.kBrake);
+        }
+        else{
+            setIdleMode(IdleMode.kCoast);
+        }*/
         // Cut power if not updated recently
         if (safetyTimer.get() > 0.1) {
             POVdrive(0, 0);
@@ -248,6 +253,7 @@ public class DriveTrain extends SubsystemBase {
         {
             // dead zone
             leftFront.set(0);
+            //m_pidControllerLeft.setReference(0, ControlType.kVelocity);
         }
 
         if(Math.abs(rightSpeed) > 100)
@@ -258,11 +264,17 @@ public class DriveTrain extends SubsystemBase {
         {
             // dead zone
             rightFront.set(0);
+           //m_pidControllerRight.setReference(0, ControlType.kVelocity);
         }
 
         
         SmartDashboard.putNumber("diffDrive/leftSetSpeed", leftSpeed);
         SmartDashboard.putNumber("diffDrive/rightSetSpeed", rightSpeed);
+    }
+    public void holdPosition(){
+        m_pidControllerLeft.setReference(leftFront.getEncoder().getPosition(), CANSparkMax.ControlType.kPosition);
+        m_pidControllerRight.setReference(rightFront.getEncoder().getPosition(), CANSparkMax.ControlType.kPosition);
+
     }
 
     public double getPitch() {

@@ -182,9 +182,9 @@ pS4Button1.onTrue(new Eject(m_intake).withInterruptBehavior(InterruptionBehavior
         final JoystickButton yButton = new JoystickButton(driveController, 4);
 
         yButton.toggleOnTrue(new SlowMode(m_driveTrain));
-        aButton.onTrue(Commands.parallel(new Teleop(() -> 0.1, m_driveTrain), new Pickup(m_intake))
-          .withTimeout(1.0));
-
+       // aButton.onTrue(Commands.parallel(new Teleop(() -> 0.1, m_driveTrain), new Pickup(m_intake))
+         // .withTimeout(1.0));
+      aButton.whileTrue(new BrakeButton(m_driveTrain));
         POVButton povUp = new POVButton(driveController, 0);
         povUp.whileTrue(new WristUp(m_wrist));
         POVButton povDown = new POVButton(driveController, 180);
